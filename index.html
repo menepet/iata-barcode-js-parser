@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="JavaScript parser for International Air Transport Association (IATA) barcode from user's boarding pass">
+	<meta name="keywords" content="iata, parser, JavaScript">
+	<meta name="author" content="Mene">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>IATA Barcode javascript parser</title>
+</head>
+<body style="background-color: rgba(169, 169, 169, 0.24);font-size: 15px;">
+	<div class="container">
+	  <div class="row">
+		<div class="col-md-12" style="font-size:120%;text-align:center;margin:1% 0; ">
+			<span><b><u>IATA Barcode Javascript Parser</b></u></span>
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="col-md-12">
+			<textarea id="mbp_input" style="width: 100%;" placeholder="iata barcode ..."></textarea>
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="col-md-12">
+			<button onclick="submitIata()">parse</button>
+		</div>	  
+	  </div>
+	  <div class="row">
+		<div id="message" class="col-md-12" style="color:red;font-size:120%;font-weight:bolder;"></div>
+	  </div>
+	  <div id="info_area" class="row" style="display:none;">
+		<div class="col-md-2">
+			<textarea id="security_var_input" style="width:100%" 
+				placeholder="variable number of optional security field"></textarea>
+		</div>
+		<div class="col-md-10">
+			<button id="secur_button" onClick="suppl_field(true)">store</button>
+		</div>
+	  </div>
+	  <div class="row">
+		<div id="results_col_1" class="col-md-6"></div>
+		<div id="results_col_2" class="col-md-6"></div>
+	  </div>
+	</div>
+    <!-- Bootstrap css -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="parser.js"></script>
+</body>
+</html>

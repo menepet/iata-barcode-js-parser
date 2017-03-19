@@ -1,0 +1,25 @@
+{
+  "name": "iata-barcode-parser",
+  "authors": [
+    "Mene <menepet@gmail.com>"
+  ],
+  "description": "JavaScript parser for International Air Transport Association (IATA) barcode from user's boarding pass",
+  "main": "index.html",
+  "keywords": [
+    "iata",
+    "parser",
+    "javascript"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
