@@ -17,5 +17,3 @@ can be read regardless of the digital signature.
 * `git clone <repository-url>` this repository
 * change into the new directory
 * `bower install`
-
-Test mbp:M1MICHEL/GEORGE       E6C2KLS ATHTORAC 1903 0114 185Y009A0013 147>218  W    B                29
