@@ -16,4 +16,4 @@ can be read regardless of the digital signature.
 
 * `git clone <repository-url>` this repository
 * change into the new directory
-* `bower install`
+* `yarn install`
