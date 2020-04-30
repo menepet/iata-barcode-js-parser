@@ -9,6 +9,6 @@
   "private": false,
   "dependencies": {
     "bootstrap3": "^3.3.5",
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   }
 }
