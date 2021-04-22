@@ -1,6 +1,10 @@
-# JavaScript parser for International Air Transport Association (IATA) barcode from user's boarding pass #
+<p align="center">
+  <img width="460" height="300" src="iata-logo.png">
+</p>
 
-###Based on BCBP(BAR CODE BOARDING PASS)-Implementation-Guide-5th-Edition-June-2016###
+> JavaScript parser for International Air Transport Association (IATA) barcode from user's boarding pass #
+
+#### ⚠️ Based on BCBP(BAR CODE BOARDING PASS)-Implementation-Guide-5th-Edition-June-2016
 [BCBP-Implementation-Guide-5th-Edition-June-2016](https://www.iata.org/whatwedo/stb/Documents/BCBP-Implementation-Guide-5th-Edition-June-2016.pdf)
 
 The security field (after 158 chars barcode length) is a separate field that enables a third party to verify that the bar code data was
@@ -12,8 +16,8 @@ structure for the signature to be stored in the bar code.
 The bar code data (mandatory, optional and individual airline use fields) remain unchanged and
 can be read regardless of the digital signature.
 
-## Installation
+## 🚀 Usage
 
 * `git clone <repository-url>` this repository
-* change into the new directory
-* `yarn install`
+* `cd iata-barcode-js-parser/`
+* Open `index.html` with a local web server

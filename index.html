@@ -1,51 +1,72 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="JavaScript parser for International Air Transport Association (IATA) barcode from user's boarding pass">
-	<meta name="keywords" content="iata, parser, JavaScript">
-	<meta name="author" content="Mene">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description"
+		content="JavaScript parser for International Air Transport Association (IATA) barcode from user's boarding pass">
+	<meta name="keywords" content="iata, barcode, parser, JavaScript">
+	<meta name="author" content="menepet<menepet@gmail.com>">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
 	<title>IATA Barcode javascript parser</title>
 </head>
+
 <body style="background-color: rgba(169, 169, 169, 0.24);font-size: 15px;">
 	<div class="container">
-	  <div class="row">
-		<div class="col-md-12" style="font-size:120%;text-align:center;margin:1% 0; ">
-			<span><b><u>IATA Barcode Javascript Parser</b></u></span>
+		<div class="row">
+			<div class="col-md-12" style="font-size:120%;text-align:center;margin:1% 0; ">
+				<b><u>IATA Barcode Javascript Parser</b></u>
+			</div>
 		</div>
-	  </div>
-	  <div class="row">
-		<div class="col-md-12">
-			<textarea id="mbp_input" style="width: 100%;" placeholder="iata barcode ..."></textarea>
+
+		<div class="row">
+			<div class="col-md-12">
+				<input id="mbp_input" class="w-100 p-3 mb-3 rounded" placeholder="iata barcode without spaces" />
+			</div>
 		</div>
-	  </div>
-	  <div class="row">
-		<div class="col-md-12">
-			<button onclick="submitIata()">parse</button>
-		</div>	  
-	  </div>
-	  <div class="row">
-		<div id="message" class="col-md-12" style="color:red;font-size:120%;font-weight:bolder;"></div>
-	  </div>
-	  <div id="info_area" class="row" style="display:none;">
-		<div class="col-md-2">
-			<textarea id="security_var_input" style="width:100%" 
-				placeholder="variable number of optional security field"></textarea>
+
+		<div class="row">
+			<div class="col-md-12">
+				<button class="rounded" onclick="submitIata()"><b>Parse</b></button>
+			</div>
 		</div>
-		<div class="col-md-10">
-			<button id="secur_button" onClick="suppl_field(true)">store</button>
+
+		<div class="row">
+			<div id="message" class="col-md-12 mt-5" style="color:rgb(255, 67, 67);font-size:120%;font-weight:bolder;"></div>
 		</div>
-	  </div>
-	  <div class="row">
-		<div id="results_col_1" class="col-md-6"></div>
-		<div id="results_col_2" class="col-md-6"></div>
-	  </div>
+		<div id="info_area" class="row" style="display:none;">
+			<div class="col-md-2">
+				<textarea id="security_var_input" style="width:100%"
+					placeholder="variable number of optional security field"></textarea>
+			</div>
+			<div class="col-md-10">
+				<button id="secur_button" onClick="suppl_field(true)">Store</button>
+			</div>
+		</div>
+
+		<div class="row">
+			<div id="results_col_1" class="col-md-6"></div>
+			<div id="results_col_2" class="col-md-6"></div>
+		</div>
 	</div>
-    <!-- Bootstrap css -->
-		<link href="node_modules/bootstrap3/dist/css/bootstrap.min.css" rel="stylesheet">
-		<script src="node_modules/jquery/dist/jquery.min.js"></script>
-		<script src="parser.js"></script>
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="parser.js"></script>
+
+	<style>
+		* { font-family: 'Open Sans', sans-serif; }
+		.title { font-size: 2em; text-decoration: underline; }
+	</style>
 </body>
+
 </html>

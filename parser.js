@@ -5,7 +5,7 @@ var max_standard_iata = 158; // the max standard iata input length and after tha
 var message_dom_element = document.getElementById("message");
 var info_dom_element = document.getElementById("info_area");
 
-var iataFormat =  {
+var iataFormat = {
 		// Mandatory
 		FORMAT_CODE: { length: 1, offset: 1, content: "S|M", explanation: "Format Code"},
 		NUMBER_OF_SEGMENTS: { length: 1, offset: 2, content: "[1-4]", explanation: "Number of Legs Encoded"},
@@ -53,57 +53,75 @@ var iataFormat =  {
 		LENGTH_OF_SECURITY_DATA: { length: 2, offset: 162+security_var, content: "[0-F]{2}", explanation: "Length of Security Data"},
 		SECURITY_DATA: { length: 100, offset: 262+security_var, content: "", explanation: "Security Data"}
 	};
-	
+
 /**
-*	OnClick triggered function for iata input.
-*/
-function submitIata(fromIndex){
+ * OnClick triggered function for iata input,
+ * which MUST NOT contains spaces inside barcode
+ * @param {Number} fromIndex
+ * @returns
+ */
+function submitIata(fromIndex) {
 	textarea = document.getElementById("mbp_input");
+
 	var results_col_1 = document.getElementById('results_col_1');
 	results_col_1.innerHTML = ""; // empty the previous results_col_1
+
 	var results_col_2 = document.getElementById('results_col_2');
 	results_col_2.innerHTML = ""; // empty the previous results_col_2
+
 	if(fromIndex) security_var = -1; // re-initialize that field.
+
 	info_dom_element.style.display = 'none';
 	message('');
+
 	if(textarea.value.length == 0) {
-        message("fill the iata barcode please first!");
+		message("Fill the iata barcode please first!");
 		return;
-    }
+	}
+
 	if(textarea.value.length > max_standard_iata && security_var == -1) {
 		info_dom_element.style.display = 'initial';
 		document.getElementById('secur_button').style.visibility = 'initial';
-        message("More than "+max_standard_iata+" characters. Fill the length of optional security field.");
+		message("More than " + max_standard_iata + " characters. Fill the length of optional security field.");
+
 		return;
-    }
-	results_col_1.innerHTML += '<p><b><u> Iata barcode parsed elements</u>: </b></p></ br>';
-	results_col_1.innerHTML += '<p><u><i> Mandatory Fieds</u>: </i></p></ br>';
-	
+	}
+	results_col_1.innerHTML += '<p class="title"> Mandatory Fieds</u>: </p></ br>';
+
 	var display_col_2 = false;
-	$.each(iataFormat, function(i, val) {
-		if(i === 'DATE_OF_PASS_ISSUANCE') display_col_2 = true;	// For display purposes only
-		if (display_col_2){		// For display purposes only
-			displayElement(results_col_2, textarea, i, val);			
+
+	for (const key in iataFormat) {
+		if(key === 'DATE_OF_PASS_ISSUANCE') display_col_2 = true;	// For display purposes only.
+
+		if (display_col_2) {		// For display purposes only
+			displayElement(results_col_2, textarea, key, iataFormat[key]);
 		} else {
-			displayElement(results_col_1, textarea, i, val);			
+			displayElement(results_col_1, textarea, key, iataFormat[key]);
 		}
-	});
+	};
 }
 
 /**
-*	Display formated the iata parsed element.
-*/
-function displayElement(dom, textarea, i, iataFormat){
+ *	Display formated the iata parsed element.
+ * @param {HTMLElement} dom
+ * @param {HTMLElement} textarea
+ * @param {Number} i
+ * @param {Object} iataFormat
+ */
+function displayElement(dom, textarea, i, iataFormat) {
 	var element = getIataElement(textarea.value, iataFormat);
-	if(i == 'BEGINNING_OF_VERSION_NUMBER') dom.innerHTML += '<p><u><i> Conditional Fieds</i></u>: </p></ br>';
-	if(i == 'BEGINNING_OF_SECURITY_DATA') dom.innerHTML += '<p><u><i> Mandatory Fieds</i></u>: </p></ br>';
+	if(i == 'BEGINNING_OF_VERSION_NUMBER') dom.innerHTML += '<p class="title"> Conditional Fieds: </p></ br>';
+	if(i == 'BEGINNING_OF_SECURITY_DATA') dom.innerHTML += '<p class="title"> Security Fieds: </p></ br>';
 	dom.innerHTML += '<p><b>'+ iataFormat.explanation +'</b>: ' + element + '</p></ br>';
 }
-	
+
 /**
-*	Get the value of the parsed iata barcode you want.
-*/
-function getIataElement(input, element){
+ *	Get the value of the parsed iata barcode you want.
+ * @param {HTMLElement} input
+ * @param {HTMLElement} element
+ * @returns
+ */
+function getIataElement(input, element) {
 	if (element.offset <= input.length && input.length <= 158/*because of airline's var field, see below*/) {
 		let tmp = input.substring(element.offset - element.length, element.offset);
 		return tmp.trim().length == 0 ? '(empty field)': tmp;
@@ -112,12 +130,12 @@ function getIataElement(input, element){
 }
 
 /**
-*	OnClick triggered function for iata input.
-*/
-function suppl_field(){
+ *	OnClick triggered function for iata input.
+ */
+function suppl_field() {
 	textarea = document.getElementById("security_var_input");
 	var security_number = isNormalInteger(textarea.value);
-	if (security_number != -1){
+	if (security_number != -1) {
 		security_var = security_number ;
 		submitIata(false);
 	} else {
@@ -126,8 +144,10 @@ function suppl_field(){
 }
 
 /**
-*	Check if the security_var is a positive number.
-*/
+ *	Check if the security_var is a positive number.
+ * @param {String} str
+ * @returns
+ */
 function isNormalInteger(str) {
     var n = Math.floor(Number(str));
     return (String(n) === str && n >= 0)? n : -1;
@@ -135,8 +155,9 @@ function isNormalInteger(str) {
 
 /**
 *	Display error/message function.
-*/
-function message(message){
+ * @param {String} message
+ */
+function message(message) {
 	message_dom_element.innerHTML = "";
 	message_dom_element.innerHTML = message;
 }
