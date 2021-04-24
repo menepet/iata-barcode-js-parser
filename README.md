@@ -8,7 +8,7 @@
 
 
 **👀 Live Demo: [https://menepet.github.io/iata-barcode-js-parser](https://menepet.github.io/iata-barcode-js-parser/)**
-> You can use this test iata barcode: `M1MICHEL/GEORGE       E6C2KLS ATHTORAC 1903 0114 185Y009A0013 147>218  W    B                29`
+> You can use this test iata barcode: M1MICHEL/GEORGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E6C2KLS&nbsp;ATHTORAC&nbsp;1903&nbsp;0114&nbsp;185Y009A0013&nbsp;147>218&nbsp;&nbsp;W&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;29
 
 The security field (after 158 chars barcode length) is a separate field that enables a third party to verify that the bar code data was
 not tampered with.
