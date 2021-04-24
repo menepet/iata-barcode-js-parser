@@ -4,11 +4,11 @@
 
 > JavaScript parser for International Air Transport Association (IATA) barcode from user's boarding pass #
 
-#### ⚠️ Based on BCBP(BAR CODE BOARDING PASS)- [BCBP-Implementation-Guide-5th-Edition-June-2016](https://www.iata.org/whatwedo/stb/Documents/BCBP-Implementation-Guide-5th-Edition-June-2016.pdf)
+#### ⚠️ Based on BCBP(BAR CODE BOARDING PASS)- [BCBP-Implementation-Guide-5th-Edition-June-2016](https://www.iata.org/contentassets/1dccc9ed041b4f3bbdcf8ee8682e75c4/2021_03_02-bcbp-implementation-guide-version-7-.pdf)
 
 
 **👀 Live Demo: [https://menepet.github.io/iata-barcode-js-parser](https://menepet.github.io/iata-barcode-js-parser/)**
-> You can use this test iata barcode: `EZQ7O92GVALHRBA00723319C002F00009100`
+> You can use this test iata barcode: `M1MICHEL/GEORGE       E6C2KLS ATHTORAC 1903 0114 185Y009A0013 147>218  W    B                29`
 
 The security field (after 158 chars barcode length) is a separate field that enables a third party to verify that the bar code data was
 not tampered with.
