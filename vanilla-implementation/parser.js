@@ -1,5 +1,4 @@
 var security_var = -1;
-var input = '';
 var max_standard_iata = 158; // the max standard iata input length and after that,
 // airline must complete a field with no limit lenght data.
 var message_dom_element = document.getElementById("message");
@@ -133,9 +132,10 @@ function getIataElement(input, element) {
  *	OnClick triggered function for iata input.
  */
 function suppl_field() {
-	textarea = document.getElementById("security_var_input");
+	var textarea = document.getElementById("security_var_input");
 	var security_number = isNormalInteger(textarea.value);
-	if (security_number != -1) {
+
+	if (security_number !== -1) {
 		security_var = security_number ;
 		submitIata(false);
 	} else {

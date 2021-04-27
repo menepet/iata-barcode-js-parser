@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="460" height="300" src="public/iata-logo.png">
+  <img width="460" height="300" src="iata-logo.png">
 </p>
 
 > JavaScript parser for International Air Transport Association (IATA) barcode from user's boarding pass #
