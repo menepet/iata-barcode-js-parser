@@ -1,12 +1,8 @@
 let security_var = -1;
-// let max_standard_iata = 158; // the max standard iata input length and after that,
-// // airline must complete a field with no limit lenght data.
-// let message_dom_element = document.getElementById("message");
-// let info_dom_element = document.getElementById("info_area");
 
 const iataFormat = {
 		// Mandatory
-		BEGINNING_OF_MANDATORY_FIELDS: { length: 0, offset: 0, content: "Mandatory Fieds:", explanation: "Mandatory Fieds"},
+		BEGINNING_OF_MANDATORY_FIELDS: { length: 0, offset: 0, content: "Mandatory Fieds", explanation: "Mandatory Fieds"},
 		FORMAT_CODE: { length: 1, offset: 1, content: "S|M", explanation: "Format Code"},
 		NUMBER_OF_SEGMENTS: { length: 1, offset: 2, content: "[1-4]", explanation: "Number of Legs Encoded"},
 		PASSENGER_NAME: { length: 20, offset: 22, content: "", explanation: "Passenger Name"},
@@ -90,99 +86,3 @@ export const getIataData = (barcode) => {
 	}
 	return -1;
 }
-
-
-
-// /**
-//  * OnClick triggered function for iata input,
-//  * which MUST NOT contains spaces inside barcode
-//  * @param {Boolean} isFromIndex
-//  * @param {String} barcode
-//  * @returns
-//  */
-// export const submitIata = () => (isFromIndex, barcode = '') => {  // REDUNDANT
-// 	let results_col_1 = document.getElementById('results_col_1');
-// 	results_col_1.innerHTML = ""; // empty the previous results_col_1
-
-// 	let results_col_2 = document.getElementById('results_col_2');
-// 	results_col_2.innerHTML = ""; // empty the previous results_col_2
-
-// 	if(isFromIndex) security_var = -1; // re-initialize that field.
-
-// 	info_dom_element.style.display = 'none';
-// 	message('');
-
-// 	if(barcode.value.length === 0) {
-// 		message("Fill the iata barcode please first!");
-// 		return;
-// 	}
-
-// 	if(barcode.value.length > max_standard_iata && security_var === -1) {
-// 		info_dom_element.style.display = 'initial';
-// 		document.getElementById('secur_button').style.visibility = 'initial';
-// 		message("More than " + max_standard_iata + " characters. Fill the length of optional security field.");
-
-// 		return;
-// 	}
-// 	results_col_1.innerHTML += '<p class="title"> Mandatory Fieds</u>: </p></ br>';
-
-// 	var display_col_2 = false;
-
-// 	for (const key in iataFormat) {
-// 		if(key === 'DATE_OF_PASS_ISSUANCE') display_col_2 = true;	// For display purposes only.
-
-// 		// if (display_col_2) {		// For display purposes only
-// 		// 	displayElement(results_col_2, barcode, key, iataFormat[key]);
-// 		// } else {
-// 		// 	displayElement(results_col_1, barcode, key, iataFormat[key]);
-// 		// }
-// 	};
-// }
-
-// /**
-//  *	Display formated the iata parsed element.
-//  * @param {HTMLElement} dom
-//  * @param {HTMLElement} textarea
-//  * @param {Number} i
-//  * @param {Object} iataFormat
-//  */
-// function displayElement(dom, textarea, i, iataFormat) {
-// 	var element = getIataElement(textarea.value, iataFormat);
-// 	if(i === 'BEGINNING_OF_VERSION_NUMBER') dom.innerHTML += '<p class="title"> Conditional Fieds: </p></ br>';
-// 	if(i === 'BEGINNING_OF_SECURITY_DATA') dom.innerHTML += '<p class="title"> Security Fieds: </p></ br>';
-// 	dom.innerHTML += '<p><b>'+ iataFormat.explanation +'</b>: ' + element + '</p></ br>';
-// }
-
-// /**
-//  *	OnClick triggered function for iata input.
-//  */
-// function suppl_field() {
-// 	var textarea = document.getElementById("security_var_input");
-// 	var security_number = isNormalInteger(textarea.value);
-
-// 	if (security_number !== -1) {
-// 		security_var = security_number ;
-// 		submitIata(false);
-// 	} else {
-// 		message('Fill with a valid positive number please.');
-// 	}
-// }
-
-// /**
-//  *	Check if the security_var is a positive number.
-//  * @param {String} str
-//  * @returns
-//  */
-// export const isNormalInteger = (str) => {
-//     var n = Math.floor(Number(str));
-//     return (String(n) === str && n >= 0)? n : -1;
-// }
-
-// /**
-// *	Display error/message function.
-//  * @param {String} message
-//  */
-// export const message = (message) => {
-// 	message_dom_element.innerHTML = "";
-// 	message_dom_element.innerHTML = message;
-// }

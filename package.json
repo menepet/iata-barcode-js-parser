@@ -1,6 +1,6 @@
 {
   "name": "iata-barcode-js-parser",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "JavaScript parser for International Air Transport Association (IATA) barcode from user's boarding pass",
   "main": "index.html",
   "repository": "https://github.com/menepet/iata-barcode-js-parser.git",
@@ -21,10 +21,14 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "styled-components": "^5.2.3",
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
     "gh-pages": "^3.1.0"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   },
   "eslintConfig": {
     "extends": [
