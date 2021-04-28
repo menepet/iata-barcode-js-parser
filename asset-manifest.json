@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/iata-barcode-js-parser/static/css/main.1ae487f3.chunk.css",
+    "main.css": "/iata-barcode-js-parser/static/css/main.7ddd066e.chunk.css",
     "main.js": "/iata-barcode-js-parser/static/js/main.40e1daf3.chunk.js",
     "main.js.map": "/iata-barcode-js-parser/static/js/main.40e1daf3.chunk.js.map",
     "runtime-main.js": "/iata-barcode-js-parser/static/js/runtime-main.c86ee5d3.js",
@@ -8,13 +8,13 @@
     "static/js/2.b25459ca.chunk.js": "/iata-barcode-js-parser/static/js/2.b25459ca.chunk.js",
     "static/js/2.b25459ca.chunk.js.map": "/iata-barcode-js-parser/static/js/2.b25459ca.chunk.js.map",
     "index.html": "/iata-barcode-js-parser/index.html",
-    "static/css/main.1ae487f3.chunk.css.map": "/iata-barcode-js-parser/static/css/main.1ae487f3.chunk.css.map",
+    "static/css/main.7ddd066e.chunk.css.map": "/iata-barcode-js-parser/static/css/main.7ddd066e.chunk.css.map",
     "static/js/2.b25459ca.chunk.js.LICENSE.txt": "/iata-barcode-js-parser/static/js/2.b25459ca.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c86ee5d3.js",
     "static/js/2.b25459ca.chunk.js",
-    "static/css/main.1ae487f3.chunk.css",
+    "static/css/main.7ddd066e.chunk.css",
     "static/js/main.40e1daf3.chunk.js"
   ]
 }
