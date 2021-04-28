@@ -2,6 +2,7 @@ html, body {
   background-color: #f7f7f7;
   margin: 0;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .error {
